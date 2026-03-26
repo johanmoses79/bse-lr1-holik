@@ -24,6 +24,20 @@ Seshn Networks
 - AI-асистент: Codeium
 
 
+## Встановлення та запуск
+
+
+```bash
+
+git clone https://github.com/johanmoses79/bse-lr1-holik
+
+cd project
+
+python main.py
+
+```
+
+
 ## Ліцензія
 
 

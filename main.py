@@ -1,23 +1,14 @@
-class User:
-    def __init__(self, name, location):
-        self.name = name
-        self.location = location
+class Зустріч:
+    def __init__(self, тема):
+        self.тема, self.учасники = тема, []
 
-    def send_message(self, recipient, message):
-        print(f"Повідомлення для {recipient.name}:")
-        print(f"Текст: {message}")
-        print("Статус: Надіслано успішно ✅")
+    def приєднатися(self, ім’я, посада):
+        self.учасники.append(f"{ім’я} ({посада})")
+        print(f"✨ {ім’я} долучився до кімнати: {self.тема}!")
 
-def invite_to_coffee(sender, recipient, idea=None):
-    if idea:
-        text = f"Привіт, {recipient.name}! Я поруч у {recipient.location}. Давай вип'ємо кави та обговоримо твою ідею: '{idea}'?"
-    else:
-        text = f"Привіт, {recipient.name}! Я також зараз у {recipient.location}. Маєш час на каву?"
-    
-    sender.send_message(recipient, text)
+    def чат(self):
+        print(f"💬 Учасники в мережі: {', '.join(self.учасники)}")
 
-if __name__ == "__main__":
-    current_user = User("Іван", "Харків (Наукова)")
-    neighbor = User("Олексій", "Харків (Наукова)")
-
-    invite_to_coffee(current_user, neighbor, "Розробка AI-асистента для студентів")
+подія = Зустріч("Тренд ШІ 2026")
+подія.приєднатися("Олександр", "Data Scientist")
+подія.чат()
